@@ -16,10 +16,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty3: UIImageView!
     @IBOutlet weak var penalty2: UIImageView!
     @IBOutlet weak var penalty1: UIImageView!
-    @IBOutlet weak var Monster = MonsterImg!
+    @IBOutlet weak var Monster : MonsterImg!
     @IBOutlet weak var HeartImg: DragImg!
     @IBOutlet weak var FoodImg: DragImg!
-    @IBOutlet weak var LittleMonster = MonsterImg!
+    @IBOutlet weak var LittleMonster : MonsterImg!
     @IBOutlet weak var MonsterBtn: UIButton!
     @IBOutlet weak var LittleOneBtn: UIButton!
   
@@ -44,11 +44,13 @@ class ViewController: UIViewController {
 
     
     @IBAction func onLittleOnePressed(sender: AnyObject) {
-        MonsterImg.animationProperty = "littleDead"
         BeginningImageView.hidden = true
         MonsterBtn.hidden = true
         LittleOneBtn.hidden = true
         Monster.hidden = true
+        restartGame()
+        restartBtn.hidden = true
+        
      
     }
     @IBAction func onMonsterBtnPressed(sender: AnyObject) {
@@ -56,8 +58,8 @@ class ViewController: UIViewController {
         LittleOneBtn.hidden = true
         MonsterBtn.hidden = true
         LittleMonster.hidden = true
-        
-        
+        restartGame()
+        restartBtn.hidden = true
     }
     
     @IBAction func onRestartBtnPressed(sender: AnyObject) {
@@ -234,6 +236,7 @@ class ViewController: UIViewController {
         currentPenalties = 0
         monsterHappy = false
         Monster.playIdleAnimation()
+        LittleMonster.playIdleAnimation()
         StartTimer()
         FoodImg.alpha = OPAQUE
         FoodImg.userInteractionEnabled = true
