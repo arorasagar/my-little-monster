@@ -22,6 +22,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var LittleMonster : MonsterImg!
     @IBOutlet weak var MonsterBtn: UIButton!
     @IBOutlet weak var LittleOneBtn: UIButton!
+    @IBOutlet weak var SunBurstBackground: UIImageView!
+    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet weak var waterDrop: DragImg!
   
     @IBOutlet weak var BeginningImageView: UIImageView!
     @IBOutlet weak var restartBtn: UIButton!
@@ -48,9 +51,12 @@ class ViewController: UIViewController {
         MonsterBtn.hidden = true
         LittleOneBtn.hidden = true
         Monster.hidden = true
-        restartGame()
+        LittleMonster.hidden = false
+     
         restartBtn.hidden = true
-        
+        StartTimer()
+        SunBurstBackground.hidden = false
+        bg.hidden = true
      
     }
     @IBAction func onMonsterBtnPressed(sender: AnyObject) {
@@ -58,8 +64,10 @@ class ViewController: UIViewController {
         LittleOneBtn.hidden = true
         MonsterBtn.hidden = true
         LittleMonster.hidden = true
-        restartGame()
+        Monster.hidden = false 
+    
         restartBtn.hidden = true
+        StartTimer()
     }
     
     @IBAction func onRestartBtnPressed(sender: AnyObject) {
@@ -73,6 +81,7 @@ class ViewController: UIViewController {
         
         FoodImg.dropTarget = Monster
         HeartImg.dropTarget = Monster
+        waterDrop.dropTarget = Monster
         penalty1.alpha = DIM_ALPHA
         penalty2.alpha = DIM_ALPHA
         penalty3.alpha = DIM_ALPHA
@@ -108,7 +117,7 @@ class ViewController: UIViewController {
         
         
         
-        StartTimer()
+      
         
       
       
@@ -136,6 +145,9 @@ class ViewController: UIViewController {
         FoodImg.userInteractionEnabled = false
         HeartImg.alpha = DIM_ALPHA
         HeartImg.userInteractionEnabled = false
+        waterDrop.alpha = DIM_ALPHA
+        waterDrop.userInteractionEnabled = false
+        
         
     }
     
@@ -158,6 +170,8 @@ class ViewController: UIViewController {
         FoodImg.userInteractionEnabled = false
         HeartImg.alpha = DIM_ALPHA
         HeartImg.userInteractionEnabled = false
+        waterDrop.alpha = DIM_ALPHA
+        waterDrop.userInteractionEnabled = false
 
       
         
@@ -203,7 +217,7 @@ class ViewController: UIViewController {
             }
         }
             
-            let rand = arc4random_uniform(2) // 0 and 1 Give me a random range between two numbers(starts at 0 so 0 or 1)
+            let rand = arc4random_uniform(3) // 0 and 1 Give me a random range between two numbers(starts at 0 so 0 or 1)
             
             if rand == 0 {
                 
@@ -211,20 +225,35 @@ class ViewController: UIViewController {
                 FoodImg.userInteractionEnabled = false
                 HeartImg.alpha = OPAQUE
                 HeartImg.userInteractionEnabled = true
+                waterDrop.alpha = DIM_ALPHA
+                waterDrop.userInteractionEnabled = false
                 
                 
                 
-            } else {
+            } else if rand == 1 {
                 
               FoodImg.alpha = OPAQUE
               FoodImg.userInteractionEnabled = true
               HeartImg.alpha = DIM_ALPHA
               HeartImg.userInteractionEnabled = false
+              waterDrop.userInteractionEnabled = false
+              waterDrop.alpha = DIM_ALPHA
                 
                 
                 
-            }
-            
+            } else {
+             FoodImg.alpha = DIM_ALPHA
+             FoodImg.userInteractionEnabled = false
+             HeartImg.alpha = DIM_ALPHA
+             HeartImg.userInteractionEnabled = false
+             waterDrop.alpha = OPAQUE
+             waterDrop.userInteractionEnabled = true
+                
+             
+                
+                
+        }
+        
             currentItem = rand
             monsterHappy = false
             
@@ -243,6 +272,7 @@ class ViewController: UIViewController {
         penalty3.alpha = DIM_ALPHA
         penalty2.alpha = DIM_ALPHA
         penalty1.alpha = DIM_ALPHA
+       
         
         
         
