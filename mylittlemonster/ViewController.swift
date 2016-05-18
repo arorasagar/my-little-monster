@@ -28,7 +28,10 @@ class ViewController: UIViewController {
   
     @IBOutlet weak var BeginningImageView: UIImageView!
     @IBOutlet weak var restartBtn: UIButton!
-    // They are all type of a certain class 
+    // They are all type of a certain class
+    
+    
+    var Character: MonsterImg!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -48,6 +51,7 @@ class ViewController: UIViewController {
 
     
     @IBAction func onLittleOnePressed(sender: AnyObject) {
+       Character = LittleMonster
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "littleOneSelected", object: nil))
         BeginningImageView.hidden = true
         MonsterBtn.hidden = true
@@ -62,6 +66,7 @@ class ViewController: UIViewController {
      
     }
     @IBAction func onMonsterBtnPressed(sender: AnyObject) {
+        Character = Monster
         NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "OriginalMonsterSelected", object: nil))
         BeginningImageView.hidden = true
         LittleOneBtn.hidden = true
@@ -81,7 +86,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Monster.playIdleAnimation()
+        
         
         FoodImg.dropTarget = Monster
         HeartImg.dropTarget = Monster
@@ -166,7 +171,7 @@ class ViewController: UIViewController {
     func gameOver() {
         
         Timer.invalidate()
-        Monster.playDeathAnimation()
+        Character.playDeathAnimation()
         sfxDeath.play()
         restartBtn.hidden = false
         FoodImg.alpha = DIM_ALPHA
@@ -175,6 +180,7 @@ class ViewController: UIViewController {
         HeartImg.userInteractionEnabled = false
         waterDrop.alpha = DIM_ALPHA
         waterDrop.userInteractionEnabled = false
+        
 
       
         
@@ -267,7 +273,7 @@ class ViewController: UIViewController {
     func restartGame() {
         currentPenalties = 0
         monsterHappy = false
-        Monster.playIdleAnimation()
+        Character.playIdleAnimation()
         StartTimer()
         FoodImg.userInteractionEnabled = false
         HeartImg.userInteractionEnabled = false
