@@ -44,9 +44,11 @@ class ViewController: UIViewController {
     var sfxHeart: AVAudioPlayer!
     var sfxDeath: AVAudioPlayer!
     var sfxSkull: AVAudioPlayer!
+   
 
     
     @IBAction func onLittleOnePressed(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "littleOneSelected", object: nil))
         BeginningImageView.hidden = true
         MonsterBtn.hidden = true
         LittleOneBtn.hidden = true
@@ -60,6 +62,7 @@ class ViewController: UIViewController {
      
     }
     @IBAction func onMonsterBtnPressed(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "OriginalMonsterSelected", object: nil))
         BeginningImageView.hidden = true
         LittleOneBtn.hidden = true
         MonsterBtn.hidden = true
@@ -78,6 +81,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Monster.playIdleAnimation()
         
         FoodImg.dropTarget = Monster
         HeartImg.dropTarget = Monster
@@ -162,7 +166,6 @@ class ViewController: UIViewController {
     func gameOver() {
         
         Timer.invalidate()
-        LittleMonster.playDeathAnimation()
         Monster.playDeathAnimation()
         sfxDeath.play()
         restartBtn.hidden = false
@@ -265,13 +268,17 @@ class ViewController: UIViewController {
         currentPenalties = 0
         monsterHappy = false
         Monster.playIdleAnimation()
-        LittleMonster.playIdleAnimation()
         StartTimer()
-        FoodImg.alpha = OPAQUE
-        FoodImg.userInteractionEnabled = true
+        FoodImg.userInteractionEnabled = false
+        HeartImg.userInteractionEnabled = false
+        waterDrop.userInteractionEnabled = false
         penalty3.alpha = DIM_ALPHA
         penalty2.alpha = DIM_ALPHA
         penalty1.alpha = DIM_ALPHA
+        FoodImg.alpha = DIM_ALPHA
+        HeartImg.alpha = DIM_ALPHA
+        waterDrop.alpha = DIM_ALPHA
+        
        
         
         
@@ -284,7 +291,8 @@ class ViewController: UIViewController {
         
         
     }
-    
+
+
 
 
 

@@ -23,14 +23,14 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sunburst-background-tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="klb-Sv-40Y">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="littleIdle1" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-l4-eSG" customClass="secondMonster" customModule="mylittlemonster" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IdlelittleOne1" translatesAutoresizingMaskIntoConstraints="NO" id="N3r-l4-eSG" customClass="MonsterImg" customModule="mylittlemonster" customModuleProvider="target">
                                 <rect key="frame" x="166" y="296" width="258" height="212"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="258" id="ZOD-9F-RWV"/>
                                     <constraint firstAttribute="height" constant="212" id="dqT-ti-Led"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="idle1" translatesAutoresizingMaskIntoConstraints="NO" id="wYb-1b-J9L" customClass="MonsterImg" customModule="mylittlemonster" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IdleOriginal1" translatesAutoresizingMaskIntoConstraints="NO" id="wYb-1b-J9L" customClass="MonsterImg" customModule="mylittlemonster" customModuleProvider="target">
                                 <rect key="frame" x="104" y="235" width="438" height="284"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="518" id="fFI-l4-859">
@@ -44,7 +44,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="pwK-aC-5KJ">
                                 <rect key="frame" x="48" y="76" width="354" height="98"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="water-drop" translatesAutoresizingMaskIntoConstraints="NO" id="oNh-ah-dyf" customClass="DragImg" customModule="mylittlemonster" customModuleProvider="target">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="water-drop" translatesAutoresizingMaskIntoConstraints="NO" id="oNh-ah-dyf" customClass="DragImg" customModule="mylittlemonster" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="81" height="98"/>
                                     </imageView>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="2Sn-6e-fLl" customClass="DragImg" customModule="mylittlemonster" customModuleProvider="target">
@@ -144,7 +144,7 @@
                                             <constraint firstAttribute="height" constant="343" id="qjh-kd-UHS"/>
                                             <constraint firstAttribute="width" constant="419" id="s7P-Nw-4B4"/>
                                         </constraints>
-                                        <state key="normal" image="idle1"/>
+                                        <state key="normal" image="IdleOriginal1"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="qjh-kd-UHS"/>
@@ -163,7 +163,7 @@
                                             <constraint firstAttribute="height" constant="150" id="LLZ-MB-Fg6"/>
                                             <constraint firstAttribute="width" constant="138" id="b4V-ev-iOg"/>
                                         </constraints>
-                                        <state key="normal" image="littleIdle1"/>
+                                        <state key="normal" image="IdlelittleOne1"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="4G1-W8-9Gv"/>
@@ -248,12 +248,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="IdleOriginal1" width="889" height="615"/>
+        <image name="IdlelittleOne1" width="271" height="239"/>
         <image name="bg" width="768" height="1024"/>
         <image name="food" width="95" height="98"/>
         <image name="ground" width="1444" height="151"/>
         <image name="heart" width="95" height="98"/>
-        <image name="idle1" width="889" height="615"/>
-        <image name="littleIdle1" width="271" height="239"/>
         <image name="livespanel" width="468" height="137"/>
         <image name="restart" width="128" height="128"/>
         <image name="skull" width="95" height="98"/>

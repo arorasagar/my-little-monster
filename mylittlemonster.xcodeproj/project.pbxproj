@@ -21,7 +21,6 @@
 		00FA31811CEAADCC004E4198 /* death.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FA317C1CEAADCC004E4198 /* death.wav */; };
 		00FA31821CEAADCC004E4198 /* heart.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FA317D1CEAADCC004E4198 /* heart.wav */; };
 		00FA31831CEAADCC004E4198 /* skull.wav in Resources */ = {isa = PBXBuildFile; fileRef = 00FA317E1CEAADCC004E4198 /* skull.wav */; };
-		00FA31871CEAC5BB004E4198 /* secondMonster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA31861CEAC5BB004E4198 /* secondMonster.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		00FA317C1CEAADCC004E4198 /* death.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = death.wav; sourceTree = "<group>"; };
 		00FA317D1CEAADCC004E4198 /* heart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = heart.wav; sourceTree = "<group>"; };
 		00FA317E1CEAADCC004E4198 /* skull.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = skull.wav; sourceTree = "<group>"; };
-		00FA31861CEAC5BB004E4198 /* secondMonster.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = secondMonster.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +113,6 @@
 			children = (
 				00F4A8811CE918F400394D55 /* AppDelegate.swift */,
 				00FA31781CEA808C004E4198 /* Monster.swift */,
-				00FA31861CEAC5BB004E4198 /* secondMonster.swift */,
 				00F4A8831CE918F400394D55 /* ViewController.swift */,
 				00CDC0D91CE97DB800E73934 /* DragImg.swift */,
 				00F4A8851CE918F400394D55 /* Main.storyboard */,
@@ -285,7 +282,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00FA31871CEAC5BB004E4198 /* secondMonster.swift in Sources */,
 				00FA31791CEA808C004E4198 /* Monster.swift in Sources */,
 				00CDC0DA1CE97DB800E73934 /* DragImg.swift in Sources */,
 				00F4A8841CE918F400394D55 /* ViewController.swift in Sources */,
